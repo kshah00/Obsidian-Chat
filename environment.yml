@@ -1,0 +1,29 @@
+    name: obsidian-search # Name of the conda environment
+    channels:
+      - pytorch         # Prioritize pytorch channel for faiss/torch
+      - conda-forge     # Use conda-forge for others
+      - defaults        # Include default channel as fallback
+    dependencies:
+      - python=3.11     # Specify Python version
+      - faiss-cpu       # Installed from pytorch channel
+      - pytorch         # Installed from pytorch channel
+      - torchvision     # Installed from pytorch channel
+      - torchaudio      # Installed from pytorch channel
+      - sentence-transformers # Installed from conda-forge
+      - numpy           # Specify explicitly, conda will resolve version
+      - pandas          # If needed by your project later
+      - click           # For CLI
+      - rich            # For CLI output
+      - python-frontmatter # For markdown parsing
+      - watchdog        # For file monitoring
+      - rapidfuzz       
+      - pip:
+        - sentence-transformers>=2.2.0
+        - watchdog>=2.1.0
+        - rich>=10.0
+        - python-dotenv>=0.19.0 # Added for .env support
+        - google-generativeai>=0.3.0
+        - prompt_toolkit>=3.0
+        - psutil>=5.8.0
+        - streamlit
+      # Add any other direct dependencies here
